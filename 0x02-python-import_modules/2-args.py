@@ -10,7 +10,6 @@ if __name__ == "__main__":
     if n == 2:
         b = ''
 
-
     print("{} argument{}{}".format(n-1, b, s))
     for x in range(1, n):
         print("{}: {}".format(x, sys.argv[x]))
