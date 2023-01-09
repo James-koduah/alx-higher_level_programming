@@ -36,7 +36,6 @@ int is_palindrome(listint_t **head)
 	{
 		if (store[i] != rep[i])
 			is_pal = 0;
-		printf("ori: %d; dup: %d\n", store[i], rep[i]);
 	}
 
 
