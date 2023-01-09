@@ -23,6 +23,9 @@ int is_palindrome(listint_t **head)
 	int is_pal = 1;
 
 	h = *head;
+
+	if (h->next == NULL)
+		return (1);
 	while (h != NULL)
 	{
 		store[i] = h->n;
@@ -31,12 +34,11 @@ int is_palindrome(listint_t **head)
 	}
 
 	reverse_array(store, rep, i);
-	i--;
-	for (i; i >= 0; i--)
+
+	for (i = i - 1; i >= 0; i--)
 	{
 		if (store[i] != rep[i])
 			is_pal = 0;
-		printf("ori: %d; dup: %d\n", store[i], rep[i]);
 	}
 
 
