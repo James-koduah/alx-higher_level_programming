@@ -31,8 +31,8 @@ int is_palindrome(listint_t **head)
 	}
 
 	reverse_array(store, rep, i);
-	i--;
-	for (i; i >= 0; i--)
+
+	for (i = i - 1; i >= 0; i--)
 	{
 		if (store[i] != rep[i])
 			is_pal = 0;
