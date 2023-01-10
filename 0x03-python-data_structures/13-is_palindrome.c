@@ -16,8 +16,8 @@ void reverse_array(int ori[], int rev[], int len)
 }
 int is_palindrome(listint_t **head)
 {
-	int store[1024];
-	int rep[1024];
+	int store[3000];
+	int rep[3000];
 	listint_t *h;
 	int i = 0;
 	int is_pal = 1;
