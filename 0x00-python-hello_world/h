@@ -1,0 +1,4 @@
+#!/bin/bash
+s=test1
+s="${s}test2"
+echo $s
