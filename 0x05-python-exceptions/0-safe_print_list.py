@@ -7,7 +7,7 @@ def safe_print_list(my_list=[], x=0):
             print("{}".format(my_list[x]), end= " ")
             hh += 1
     except IndexError:
-            print("", end="")
+        print("", end="")
     finally:
         print("")
     return hh
