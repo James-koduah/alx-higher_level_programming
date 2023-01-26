@@ -2,8 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 str = ""
-hh = abs(number) 
-last = hh % 10
+last = (abs(number) % 10)
 if last > 5:
     str = "and is greater than 5"
 elif last == 0:
