@@ -25,7 +25,7 @@ class Square:
     def size(self):
         """Return private variable"""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Set private variable"""
