@@ -70,6 +70,7 @@ class Square:
         if x == 0:
             print("")
         else:
+            [print("") for r in range(0, self.__position[1])]
             for i in range(0, x):
                 for n in range(0, y[0]):
                     print(" ", end="")
