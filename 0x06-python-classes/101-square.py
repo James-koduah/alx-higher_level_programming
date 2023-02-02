@@ -80,17 +80,18 @@ class Square:
 
     def __str__(self):
         """prints square with # character"""
-        hh = []
         x = self.size
         y = self.position
+        hh = []
         if x == 0:
             return ("")
         else:
-            [hh.append("") for r in range(0, self.__position[1])]
+            [hh.append("\n") for r in range(0, self.__position[1])]
             for i in range(0, x):
                 for n in range(0, y[0]):
                     hh.append(" ")
                 for r in range(0, x):
                     hh.append("#")
-                hh.append("\n")
+                if i != x - 1:
+                    hh.append("\n")
             return ("".join(hh))
