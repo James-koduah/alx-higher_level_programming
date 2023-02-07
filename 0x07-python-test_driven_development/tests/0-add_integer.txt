@@ -1,1 +1,56 @@
+# doctest_add_integer.py
+
+=============================
+How to use add_integer
+=============================
+
+
+
+Numbers
+========
+
+``add_integer`` returns the addition of its arguments
+the value is eqivalent to using the ``+`` operator.
+
+
+For integers
+============
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 3)
+	5
+
+For floats it converts them into integers
+==========
+::
+	>>> add_integer(6.0, 4.0)
+	10
+
+Floats and integers can be combined
+::
+	>>> add_integer(2, 4.7)
+	6
+
+The second argument is optional and by default is 98
+::
+	>>> add_integer(3)
+	101
+
+
+Non-Numbers
+===========
+
+The function ``add_integer`` expects both arguments to be of int
+or float types. Any other argument will raise a TypeError
+
+::
+	>>> add_integer(3, "James")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+	>>> add_integer("goat", 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
 
