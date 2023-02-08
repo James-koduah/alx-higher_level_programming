@@ -9,7 +9,10 @@ def add_args_to_list():
     b = "add_item.json"
     c = []
     if len(sys.argv) == 1:
-        save_to_json_file(c, b)
+        try:
+            c = load_from_json_file(b)
+        except:
+            save_to_json_file(c, b)
         return
 
     for i in range(1, len(sys.argv)):
