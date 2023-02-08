@@ -3,7 +3,7 @@
 
 
 def inherits_from(obj, a_class):
-    """Checks to see if 
+    """Checks to see if
         obj inherits directly ofr indirectly from a_class
         Return True or False
     """
