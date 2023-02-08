@@ -1,0 +1,41 @@
+#doctest_class_MyList
+
+=====================
+How to use MyList
+=====================
+
+MyList is an extention of the list class or you can say a subclass and list 
+is the super class
+
+``Initaialization``
+MyList does not receive any arguments 
+
+
+Without function
+================
+::
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(3)
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> print(my_list)
+	[3, 1, 2]
+	
+
+Function print_sorted
+=====================
+```print_sorted()``` returns a sorted version of the MyList class
+
+::
+	>>> my_list.print_sorted()
+	[1, 2, 3]
+
+```print_sorted()``` does not modify the original list (it prints a copy)
+	so when we print the original we don't get a sorted version
+
+Original
+==============
+::
+	>>> print(my_list)
+	[3, 1, 2]
