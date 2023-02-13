@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 
 """A rectangle Class"""
 from models.base import Base
