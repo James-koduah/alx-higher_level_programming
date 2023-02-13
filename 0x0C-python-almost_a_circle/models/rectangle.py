@@ -24,7 +24,7 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle instance"""
         return self.width * self.height
-    
+
     def display(self):
         """Displays what the rectangle would look like
             self.y: offsets the rectangle on the y-axis downwards
@@ -32,17 +32,25 @@ class Rectangle(Base):
         """
         w = self.width
         h = self.height
-        for a in range(0, self.y): print("")
+        for a in range(0, self.y):
+            print("")
         for b in range(0, h):
-            for c in range(0, self.x): print(" ", end="")
-            for j in range(0, w): print("#", end="")
+            for c in range(0, self.x):
+                print(" ", end="")
+            for j in range(0, w):
+                print("#", end="")
             print("")
 
     def to_dictionary(self):
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': 10}
+        return {'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': 10}
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y},"
+                f"- {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         try:

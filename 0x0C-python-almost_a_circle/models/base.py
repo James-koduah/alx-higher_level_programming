@@ -3,6 +3,7 @@
 """Base class for all other classes"""
 import json
 
+
 class Base():
     """The parent class of this project"""
     __nb_objects = 0
