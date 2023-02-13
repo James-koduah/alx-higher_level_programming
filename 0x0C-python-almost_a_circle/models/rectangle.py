@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import sys
 
 """A rectangle Class"""
 from models.base import Base
@@ -8,6 +9,7 @@ class Rectangle(Base):
     """A rectangle class that inherits from the Base class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialization"""
         super().__init__(id)
         self.is_an_integer("width", width)
         self.is_an_integer("height", height)
@@ -20,7 +22,61 @@ class Rectangle(Base):
         self.__y = self.is_less_than_zero("y", y)
 
     def area(self):
+        """Returns the area of the Rectangle instance"""
         return self.width * self.height
+    
+    def display(self):
+        """Displays what the rectangle would look like
+            self.y: offsets the rectangle on the y-axis downwards
+            self.x: offsets the rectangle on the x-axis rightwards
+        """
+        w = self.width
+        h = self.height
+        for a in range(0, self.y): print("")
+        for b in range(0, h):
+            for c in range(0, self.x): print(" ", end="")
+            for j in range(0, w): print("#", end="")
+            print("")
+
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': 10}
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args, **kwargs):
+        try:
+            self.id = args[0]
+        except Exception:
+            pass
+        try:
+            self.__width = args[1]
+        except Exception:
+            pass
+        try:
+            self.__height = args[2]
+        except Exception:
+            pass
+        try:
+            self.__x = args[3]
+        except Exception:
+            pass
+        try:
+            self.__y = args[4]
+        except Exception:
+            pass
+
+        if len(args) == 0:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.__width = kwargs["width"]
+            if "height" in kwargs:
+                self.__height = kwargs["height"]
+            if "x" in kwargs:
+                self.__x = kwargs["x"]
+            if "y" in kwargs:
+                self.__y = kwargs["y"]
 
     def is_an_integer(self, name, value):
         """A custom function not part of the ALX guide
