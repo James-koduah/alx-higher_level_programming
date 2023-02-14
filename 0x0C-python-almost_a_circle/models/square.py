@@ -10,19 +10,23 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """prints out when the class is printed"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
+        """Returns the value of the width"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """Sets the value of the width"""
         self.is_an_integer("width", value)
         self.__width = self.is_less_than_zero("width", value, True)
         self.__height = self.is_less_than_zero("width", value, True)
 
     def to_dictionary(self):
+        """Returns a dictionary representation of the Square Class"""
         return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
 
     def update(self, *args, **kwargs):
