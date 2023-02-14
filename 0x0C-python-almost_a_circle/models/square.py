@@ -12,7 +12,6 @@ class Square(Rectangle):
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
-
     @property
     def size(self):
         return self.width
@@ -20,21 +19,20 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         self.is_an_integer("width", value)
-        self.__width = self.is_less_than_zero("width", value, True) 
+        self.__width = self.is_less_than_zero("width", value, True)
         self.__height = self.is_less_than_zero("width", value, True)
 
     def to_dictionary(self):
         return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
 
-
     def update(self, *args, **kwargs):
         """ This is a way of updating values in the Square class
             *args: The first value is for the id
                     The second value is for the size
-            (Note that both the height and width of the square have the same value)
+            (Note that both height and width of the square have the same value)
                     The third value is for the x offset
                     The fourth value is for the y offset
-            *kwargs: Special key: value pairs that specify which value to update
+            *kwargs: Special key:value pairs that specify which value to update
         """
         try:
             self.id = args[0]
@@ -67,5 +65,3 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
-
-
