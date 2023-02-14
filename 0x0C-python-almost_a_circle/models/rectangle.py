@@ -8,7 +8,9 @@ class Rectangle(Base):
     """A rectangle class that inherits from the Base class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialization"""
+        """Initialization of the class Rectangle
+            Args: width, height, x-offset, y-offset
+        """
         super().__init__(id)
         self.is_an_integer("width", width)
         self.is_an_integer("height", height)
@@ -41,7 +43,9 @@ class Rectangle(Base):
             print("")
 
     def to_dictionary(self):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         return {'x': self.x,
                 'y': self.y,
                 'id': self.id,
@@ -49,12 +53,14 @@ class Rectangle(Base):
                 'width': 10}
 
     def __str__(self):
-        """oooo"""
+        """You need to write more documentation for this function"""
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y},"
                 f"- {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         try:
             self.id = args[0]
         except Exception:
@@ -117,44 +123,60 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         self.is_an_integer("x", value)
         self.__x = self.is_less_than_zero("x", value)
 
     @property
     def y(self):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         self.is_an_integer("y", value)
         self.__y = self.is_less_than_zero("y", value)
 
     @property
     def height(self):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         self.is_an_integer("height", value)
         self.__height = self.is_less_than_zero("height", value, True)
 
     @property
     def width(self):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """oooo"""
+        """You need to write more documentation for this function
+            Return: something
+        """
         self.is_an_integer("width", value)
         self.__width = self.is_less_than_zero("width", value, True)
