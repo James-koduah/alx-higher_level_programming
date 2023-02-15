@@ -51,15 +51,19 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is None:
-            with open("Rectangle.json", "w", encoding="utf-8") as a_file:
-                b = cls.to_json_string([])
+        path = ""
+        if cls.__name__ == "Rectangle":
+            path = "Rectangle.json"
+        elif cls.__name__ == "Square":
+            path = "Square.json"
+
+        with open(path, "w", encoding="utf-8") as a_file:
+            if list_objs is None:
+                b  = cls.to_json_string([])
                 a_file.write(b)
-        else:
-            dic = []
-            b = list_objs[0].__class__.__name__
-            for i in list_objs:
-                dic.append(i.to_dictionary())
-            with open(f"{b}.json", "w", encoding="utf-8") as a_file:
-                c = cls.to_json_string(dic)
-                a_file.write(c)
+                return
+            else:
+                dic = [x.to_dictionary() for x in list_objs]
+                b = cls.to_json_string(dic)
+                a_file.write(b)
+                return
