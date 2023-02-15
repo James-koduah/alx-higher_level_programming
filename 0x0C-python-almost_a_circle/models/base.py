@@ -32,14 +32,22 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        if "size" in dictionary:
+        if cls.__name__ == "Rectangle":
+            rec = cls(1, 2, 3, 4)
+            rec.update(**dictionary)
+            return rec
+        else:
+            squ = cls(2, 3, 4)
+            squ.update(**dictionary)
+            return squ
+        """if "size" in dictionary:
             squ = cls(2, 3, 4)
             squ.update(**dictionary)
             return squ
         else:
             rec = cls(1, 2, 3, 4)
             rec.update(**dictionary)
-            return rec
+            return rec"""
 
     @classmethod
     def save_to_file(cls, list_objs):
