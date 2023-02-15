@@ -32,14 +32,15 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        if cls.__name__ == "Rectangle":
-            rec = cls(1, 2, 3, 4)
-            rec.update(**dictionary)
-            return rec
-        else:
-            squ = cls(2, 3, 4)
-            squ.update(**dictionary)
-            return squ
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                rec = cls(1, 3, 4)
+                rec.update(**dictionary)
+                return rec
+            else:
+                squ = cls(2, 3, 4)
+                squ.update(**dictionary)
+                return squ
         """if "size" in dictionary:
             squ = cls(2, 3, 4)
             squ.update(**dictionary)
@@ -67,3 +68,20 @@ class Base():
                 b = cls.to_json_string(dic)
                 a_file.write(b)
                 return
+
+    @classmethod
+    def load_from_file(cls):
+        path = ""
+        if cls.__name__ == "Rectangle":
+            path = "Rectangle.json"
+        elif cls.__name__ == "Square":
+            path = "Square.json"
+
+        try:
+            with open(path) as a_file:
+                b = a_file.read()
+                items = cls.from_json_string(b)
+                last = [cls.create(**x) for i in items]
+                return last
+        except:
+            return []
