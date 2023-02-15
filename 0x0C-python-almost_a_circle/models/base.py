@@ -81,7 +81,7 @@ class Base():
             with open(path) as a_file:
                 b = a_file.read()
                 items = cls.from_json_string(b)
-                last = [cls.create(**x) for i in items]
+                last = [cls.create(**i) for i in items]
                 return last
-        except:
+        except IOError:
             return []
