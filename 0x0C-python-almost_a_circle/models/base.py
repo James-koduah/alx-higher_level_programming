@@ -59,7 +59,7 @@ class Base():
 
         with open(path, "w", encoding="utf-8") as a_file:
             if list_objs is None:
-                b  = cls.to_json_string([])
+                b = cls.to_json_string([])
                 a_file.write(b)
                 return
             else:
