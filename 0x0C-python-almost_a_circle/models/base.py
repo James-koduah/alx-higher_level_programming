@@ -2,7 +2,7 @@
 
 """Base class for all other classes"""
 import json
-
+import csv
 
 class Base():
     """The parent class of this project"""
@@ -34,11 +34,11 @@ class Base():
     def create(cls, **dictionary):
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                rec = cls(1, 3, 4)
+                rec = cls(1, 3)
                 rec.update(**dictionary)
                 return rec
             else:
-                squ = cls(2, 3, 4)
+                squ = cls(2)
                 squ.update(**dictionary)
                 return squ
         """if "size" in dictionary:
@@ -85,3 +85,42 @@ class Base():
                 return last
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serialize an object to csv format"""
+        path = cls.__name__ + ".csv"
+        with open(path, "w", newline="") as a_file:
+            if list_objs and list_objs != []:
+
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+
+                writer = csv.DictWriter(a_file, fieldnames=fieldnames)
+                for i in list_objs:
+                    writer.writerow(i.to_dictionary())
+            else:
+                a_file.write("[]")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserialize an object from a csv file"""
+        path = cls.__name__ + ".csv"
+        try:
+            with open(path, 'r', newline="") as a_file:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+
+                csv_r = csv.DictReader(a_file, fieldnames=fieldnames)
+                final = []
+                for row in csv_r:
+                    for k, v in row.items():
+                        row[k] = int(v)
+                    final.append(row)
+                return [cls.create(**item) for item in final]
+        except IOError:
+            pass
