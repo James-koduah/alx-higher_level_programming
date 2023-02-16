@@ -4,6 +4,7 @@
 import json
 import csv
 
+
 class Base():
     """The parent class of this project"""
     __nb_objects = 0
