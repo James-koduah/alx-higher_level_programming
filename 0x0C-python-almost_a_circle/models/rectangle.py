@@ -50,7 +50,7 @@ class Rectangle(Base):
                 'y': self.y,
                 'id': self.id,
                 'height': self.height,
-                'width': 10}
+                'width': self.width}
 
     def __str__(self):
         """You need to write more documentation for this function"""
