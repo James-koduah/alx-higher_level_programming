@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 '''print square'''
+
+
 def print_square(size):
     '''Prints a representation of a square'''
     if type(size) == float and size < 0:
