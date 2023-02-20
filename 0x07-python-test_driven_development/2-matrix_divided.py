@@ -20,9 +20,14 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     b = 0 
+    lent = 0
     final = []
-    lent = len(matrix[0])
-
+    try:
+        lent = len(matrix[0])
+    except:
+        print("matrix must be a matrix (list of lists) of integers/floats")
+        return
+    
     for i in matrix:
         """checking to see if all elements are integers or floats"""
         for x in i:

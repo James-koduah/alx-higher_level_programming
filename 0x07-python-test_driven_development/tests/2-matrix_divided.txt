@@ -1,0 +1,40 @@
+# doctest_for_matrix_divided
+
+============================
+Usage of matrix_divided()
+============================
+
+Matrix of Numbers
+=================
+
+``matrix_divided()`` returns a new matrix made up of the divided values of the argument
+provided.The argument is a matrix of numbers and they are divided by the second argument by name div
+::
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 2)
+	[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+::
+	>>> matrix = [[1, -2.2, 3, 4.4, 5], [-6.6, 7.00, 8, 9.999, 10]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
+
+
+Matrix of NON-NUMBERS
+=====================
+It raises a TypeError of "matrix must be a matrix (list of lists) of integers/floats"
+
+::
+	 matrix = [[1, 2, "kofi"], [4, 5, "James"]]
+	 matrix_divided(matrix, 2)
+	Trackback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The same happens with a none matrix
+
+::
+	matrix = [1, 2, 3]
+	matrix_divided(matrix, 2)
+	Trackback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
