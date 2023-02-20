@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
+
+'''Say my name is a function that says you name'''
+
 def say_my_name(first_name, last_name=""):
+    '''Says your name'''
     if type(first_name) != str:
         raise TypeError("first_name must be a string")
     if type(last_name) != str:
