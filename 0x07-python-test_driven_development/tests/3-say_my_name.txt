@@ -1,0 +1,28 @@
+# doctest_for_Say_my_name
+
+
+
+Usage
+=====
+
+String Arguments
+================
+
+::
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("James", "Koduah")
+	My name is James Koduah
+
+::
+	>>> say_my_name("James", 8)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+	>>> say_my_name(5, "Koduah")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+	>>> say_my_name("James")
+	My name is James 
