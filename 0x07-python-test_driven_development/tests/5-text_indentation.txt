@@ -1,0 +1,24 @@
+#doctest_for_text_indentation
+
+Usage
+=====
+
+String
+======
+::
+	>>> t_i = __import__('5-text_indentation').text_indentation
+	>>> t_i("James")
+	James
+
+::
+	>>> t_i("James.Koduah")
+	James.
+	<BLANKLINE>
+	Koduah
+
+Non-String
+==========
+::
+	>>> t_i(11)
+	Traceback (most recent call last):
+	TypeError: text must be a string
