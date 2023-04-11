@@ -1,11 +1,9 @@
 #!/usr/bin/node
 
 function factorial (num) {
-  let total = 0;
   if (num > 1) {
-    total += factorial(num - 1);
-  }
-  return num + total;
+   return num *= factorial(num - 1);
+  } else return 1;
 }
 
 let arg = Number(process.argv[2]);
