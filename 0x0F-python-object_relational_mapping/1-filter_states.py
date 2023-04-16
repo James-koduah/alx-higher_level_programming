@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+List names of 'N' in Table states from database hbtn_0e_0_usa
+Usage: ./0-select_states.py <username> <password> <database>
+'''
 
 import sys
 import MySQLdb
