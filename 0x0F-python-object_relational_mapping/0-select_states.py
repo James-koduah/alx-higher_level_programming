@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+List Table states from database hbtn_0e_0_usa
+Usage: ./0-select_states.py <username> <password> <database>
+'''
 
 import MySQLdb
 import sys
