@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+    Lists all state names in a database
+'''
 
 from model_state import Base, State
 from sqlalchemy import create_engine
