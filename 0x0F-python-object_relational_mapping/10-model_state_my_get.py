@@ -15,8 +15,13 @@ if __name__ == "__main__":
             )
     session = sessionmaker(bind=engine)()
     Base.metadata.create_all(bind=engine)
-    results = session.query(State).filter(State.name == state_name) 
-    try:
-        print(results[0].name)
-    except:
+    results = session.query(State)
+    not_exists = 1
+    for state in results:
+        if state.name == state_name:
+            print(state.id)
+            not_exists = 0
+            break;
+
+    if not_exists:
         print('Not found')
