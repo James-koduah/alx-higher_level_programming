@@ -25,6 +25,8 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC", (args[4],))
     rows = cur.fetchall()
     len = [len(rows), len(rows)]
+    if len[1] == 0:
+        print()
     for row in rows:
         for item in row:
             if len[0] != 1 and len[1] != 1:
