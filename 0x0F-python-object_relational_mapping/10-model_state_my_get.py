@@ -21,7 +21,7 @@ if __name__ == "__main__":
         if state.name == state_name:
             print(state.id)
             not_exists = 0
-            break;
+            break
 
     if not_exists:
         print('Not found')
