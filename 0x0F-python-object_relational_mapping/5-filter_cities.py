@@ -23,11 +23,11 @@ if __name__ == '__main__':
                 SELECT states.id FROM states WHERE states.name=%s) \
                 ORDER BY cities.id ASC", (args[4],))
     rows = cur.fetchall()
-    len = len(rows)
+    len = [len(rows), len(rows)]
     for row in rows:
         for item in row:
-            if len != 1:
+            if len[0] != 1 and len[1] != 1:
                 print(f'{item}', end=', ')
             else:
                 print(f'{item}')
-            len -= 1
+            len[0] -= 1
