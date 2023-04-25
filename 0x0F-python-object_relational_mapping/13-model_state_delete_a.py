@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)()
     Base.metadata.create_all(bind=engine)
     results = session.query(State).all()
-    i = 1
     for row in results:
-        print(f"{row.id}: {row.name}")
-        i += 1
+        if 'a' in row.name:
+            session.delete(row)
+            session.commit()
