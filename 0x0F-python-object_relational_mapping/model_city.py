@@ -2,9 +2,12 @@
 """
 City Model for cities table
 """
+
+
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 from model_state import Base
+
 
 class City(Base):
     __tablename__ = "cities"
