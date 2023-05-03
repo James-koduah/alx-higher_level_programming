@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo 'Usage: ./mm file'
+else
+	touch $1
+	chmod u+x $1
+	echo '#!/bin/bash' > $1
+	vi $1
+fi

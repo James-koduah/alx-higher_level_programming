@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+if [ $# -eq 0 ]; then
+	echo 'Error'
+else
+	sshpass -p "f6d6760ef9a533ce06c4" scp $1 fe84fabd8c3a@fe84fabd8c3a.d2ec31bf.alx-cod.online:~/
+fi
