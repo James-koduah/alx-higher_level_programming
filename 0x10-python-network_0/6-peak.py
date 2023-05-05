@@ -4,6 +4,7 @@
 
 
 def find_peak(list_of_integers):
+    """Find the peak in a list of integers"""
     length = len(list_of_integers)
     for i in range(1, length - 1):
         cur = list_of_integers[i]
